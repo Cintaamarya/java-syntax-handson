@@ -1,0 +1,49 @@
+Bagian A: Sintaks dan Penamaan
+1. Analisis Error
+   - int 2number = 10; diperbaiki menjadi int Number2 = 10;(tidak diawali dengan angka)
+   - String first name = "Budi"; diperbaiki menjadi String firstname = "Budi"; (hapus spasi diantara first dan name)
+   - int class = 25; diperbaiki menjadi int ClassNamber = 25; (karena class keyword Java)
+
+2. Naming Convention
+   - namaLengkapMahasiswa
+   - nimMahasiswa
+   -ipkMahasiswa
+   -alamatMahasiswa
+   -statusAktifKuliah
+  (semua huruf pertama kecil, kata selanjutnya diawalidengan huruf besar)
+
+3. Class Naming
+   syntaxchecker (salah)
+   SyntaxChecker (benar)
+   Jika dicompile dengan nama class syntaxchecker tetapi file bernama SyntaxChecker.java, akan muncul error.
+
+Bagian B: Tipe Data dan Casting
+1. Pemilihan Tipe Data:
+   Contoh input: angka1 = 5, angka2 = 2
+   - jika pakai int: 5/2 = 3 (hasil dibulatkan kebawah)
+   - jika pakai double: 5.0/2.0 = 2.5
+   jadi perbedaannya adalah, int hanya simpan bilangan bulat (persisi hilang). Sedangkan double bisa menyimpan pecahan.
+
+2. Data Loss Experiment:
+   Data loss paling signifikan terjadi saat long ke int.
+   Hasil casting menghasilkan nilai 1215752192, bukan 100_000_000_000 - 1,215,752,192.
+
+3. Overflow Analysis:
+   Jika input byte testByte = 300; hasil error saat compile. Karena, byte hanya menampung -128 sampai 127.
+
+4. Pratical Impact:
+   Program GradeCalkulator beresiko error jika tidak validasi input.
+   contoh: jika user masukan nilaiTugas = 120, hasil perhitungan tetap jalan padahal nilai tidak valid.
+
+Bagian C: Input/Output
+1. Scanner Implementation:
+   - nextLine() - untuk input string (Nama, NIM, Jurusan).
+   - nextInt() - untuk input angka bulat (Umur, Semester, Tahun Masuk).
+   - nextDouble() - untuk input pecahan (IPK).
+   - nextFloat() - untuk input tinggi badan (desimal ringan).
+   - nextBoolean() - untuk input status aktif (true/false).
+
+2. Input Validation:
+   Jika input nilai diluar 0-100 (misalnya 120), program tetap menghitung nilai akhir tanpa error.
+   Namun hasilnya tidak logis.
+   Karena belum ada validasi (di kode ada komentar //TODO: Tambahkan validasi input).
